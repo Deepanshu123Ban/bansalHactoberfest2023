@@ -1,0 +1,34 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+  int n,value,temp;
+cout<<"Enter n element in array ";
+cin>>n;
+int arr[n];
+for(int i=0;i<n;i++)
+{
+cout<<"Enter arr element"<<i<<" ";
+cin>>arr[i];
+}
+for(int i=0;i<n;i++)
+  {
+value=i;
+    for(int j=i;j>=0;j--)
+      {
+        if(arr[j]>arr[value])
+        {
+          temp=arr[j];
+          arr[j]=arr[value];
+          arr[value]=temp;
+          value=j;
+        }
+      }
+  }
+
+  for(int i=0;i<n;i++)
+{
+  cout<<arr[i]<<" ";
+}  
+return 0;
+}
